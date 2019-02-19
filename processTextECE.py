@@ -100,7 +100,7 @@ with open(file, encoding='utf-') as file:
     for line in file.readlines()[:]:
         output+=line
 #split just before abs number
-records = re.split(ANo,output)
+records = re.split(r'^(?=[A-Z]{1,4}[\d]+[\.]{0,1}[\d]{0,1}$)',output)
 print(len(records))
 print(records[1])
 input('Test for the ANO:')
@@ -115,7 +115,7 @@ for item in records[1:]:
         doi = ''
         # processing body of abstract by cutting upto DOI
         for line in body.split('\n'):
-            if line.match(AbsEndLine) is not None:
+            if line.match(r'^DOI: 10[\.]1530/[\w\.]+$') is not None:
                 doi = line
                 break
             else:
