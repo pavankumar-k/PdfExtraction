@@ -6,9 +6,7 @@ Abstracts data is then processed into excel files where abstract details are lin
 
 # Packages and Libraries
 
-Python
-Beautifulsoup
-pandas
+Python 3.6, Beautifulsoup, pandas
 
 # Steps:
 
